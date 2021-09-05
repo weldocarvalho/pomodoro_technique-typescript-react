@@ -7,4 +7,55 @@
 
 html {
     font-size: 62.5%;
+    font-family: sans-serif;
+}
+
+body {
+  background-color: blue;
+  line-height: 1.5;
+}
+
+.Wrapper {
+  max-width: 55rem;
+  margin: 0 auto;
+}
+
+/* .WorkingTime {
+  background-color: gainsboro;
+} */
+
+/* .Hidden {
+  display: none;
+} */
+
+.Pomodoro {
+  background-color: #fff;
+  margin: 5rem 2rem;
+  padding: 2rem;
+  border-radius: 0.4rem;
+  box-shadow: 0 0 1rem rgba(0, 0, 0, 0.3);
+}
+
+.Pomodoro h2 {
+  font-size: 2rem;
+  text-align: center;
+}
+
+.Pomodoro .Timer {
+  font-size: 5rem;
+  text-align: center;
+}
+
+.Pomodoro .Controls {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.Pomodoro button {
+  background-color: blue;
+  border: none;
+  cursor: pointer;
+  padding: 1rem 2.5rem;
+  margin: 2rem auto;
 }
