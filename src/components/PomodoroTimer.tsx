@@ -1,7 +1,15 @@
+/* eslint-disable @typescript-eslint/no-var-requires */
 import React, { useEffect, useState } from 'react';
+
 import { useInterval } from '../hooks/useInterval';
 import { Button } from './Button';
 import { Timer } from './Timer';
+
+const bellStart = require('../sounds/bellStart.mp3');
+const bellFinish = require('../sounds/bellFinish.mp3');
+
+const audioStartWorking = new Audio(bellStart);
+const audioStopWorking = new Audio(bellFinish);
 
 interface Props {
   pomodoroTime: number;
@@ -33,6 +41,7 @@ export function PomodoroTimer(props: Props): JSX.Element {
     setWorking(true);
     setResting(false);
     setMainTime(props.pomodoroTime);
+    audioStartWorking.play();
   };
 
   const rest = (long: boolean) => {
@@ -41,6 +50,8 @@ export function PomodoroTimer(props: Props): JSX.Element {
     setResting(true);
 
     long ? setMainTime(props.longRestTime) : setMainTime(props.shortRestTime);
+
+    audioStopWorking.play();
   };
 
   return (
